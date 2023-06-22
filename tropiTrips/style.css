@@ -1,0 +1,467 @@
+:root {
+    --primary-color: #0c0505;
+    --secondary-color: #ffffff;
+    --tertiary-color: #c09739;
+    --quaternary-color: #fff;
+
+    --primary-font: 'Source Code Pro', monospace;
+    --secondary-font: 'Courier New', Courier, monospace;
+
+    --primary-font-size: 1rem;
+    --secondary-font-size: 1.5rem;
+    --tertiary-font-size: 2rem;
+    --quaternary-font-size: 2.5rem;
+    --quinary-font-size: 3rem;
+    --six-font-size: 0.8rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    font-family: var(--primary-font);
+    font-size: var(--primary-font-size);
+}
+
+a,
+p,
+li {
+    font-size: var(--primary-font-size);
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+form {
+    margin: 2rem;
+}
+
+input {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 100px;
+    padding: 5px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fixed-header>nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0.8rem;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.70);
+    z-index: 999;
+}
+
+.enlace {
+    position: absolute;
+    padding: 10px 20px;
+    left: 0;
+    top: 0;
+}
+
+.logo {
+    height: 45px;
+}
+
+.fixed-header>nav>ul {
+    float: right;
+    margin-right: 20px;
+}
+
+.fixed-header>nav>ul>li {
+    line-height: 55px;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.fixed-header>nav>ul>li>a {
+    border: 3px solid var(--tertiary-color);
+    padding: 0.8rem;
+    text-transform: uppercase;
+}
+
+.fixed-header>nav>ul>li>a:hover {
+    color: var(--secondary-color);
+    background-color: var(--tertiary-color);
+}
+
+.checkbtn {
+    font-size: 40px;
+    color: #c09739;
+    float: right;
+    line-height: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media(max-width:952px) {
+    .enlace {
+        padding-left: 20px;
+    }
+
+    .fixed-header nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 858px) {
+    .checkbtn {
+        display: block;
+    }
+
+    .fixed-header nav ul {
+        position: fixed;
+        width: 100%;
+        height: 55vh;
+        background-color: var(--quaternary-color);
+        top: 90px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    .fixed-header nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    .fixed-header nav ul li a {
+        font-size: 20px;
+        border: 3px solid var(--tertiary-color);
+        padding: 0.8rem;
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+}
+
+/*ABOUT*/
+.about-container {
+    background-image: url(./assets/playa7.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+    position: relative;
+}
+
+.text-container {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 100%;
+    height: 80%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+}
+
+.text-container:hover {
+    background-color: rgba(5, 5, 5, 0.3);
+}
+
+.about-contenido {
+    width: 80%;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.about-contenido>ul>li {
+    margin: 1rem;
+}
+
+.about-contenido>h1 {
+    font-size: 1.7rem;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/*DESTINOS*/
+
+.destinies-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.destinies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2.5rem;
+    margin-top: 10px;
+}
+
+.slider-container {
+    width: 370px;
+    height: 320px;
+    position: relative;
+    overflow: hidden;
+}
+
+.fotos-slider {
+    display: flex;
+    position: relative;
+    padding: 3rem 0;
+    white-space: nowrap;
+    animation: textScroll 20s linear infinite;
+    justify-content: space-around;
+}
+
+.fotos-slider>li>img {
+    object-fit: cover;
+    width: 350px;
+}
+
+@keyframes textScroll {
+    0% {
+        left: 100%;
+    }
+
+    100% {
+        left: -100%;
+    }
+}
+
+.textdest-container {
+    max-width: 450px;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.destinies-text {
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.textdest-container>h2>p {
+    font-size: 1.1rem;
+}
+
+.flecha {
+    position: absolute;
+    right: 43%;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    background: rgba(181, 131, 39, 0.724);
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 50%;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.flecha:hover {
+    cursor: pointer;
+    transform: scale(1.2, 1.2);
+}
+
+/* SERVICES */
+
+h4 {
+    font-size: 1.5rem;
+}
+
+.services-section {
+    background-color: azure;
+}
+
+.services-container {
+    margin-top: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 30px;
+}
+
+.services-container>ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 100px;
+    justify-content: center;
+}
+
+.list-services {
+    position: relative;
+}
+
+.services-container>ul>li {
+    width: 300px;
+}
+
+.services-container>ul>li>h3 {
+    text-align: center;
+}
+
+.services-container>ul>li>div>div {
+    width: 50px;
+}
+
+.services-container>ul>li>div>div>img {
+    width: 260%;
+}
+
+.booking {
+    text-align: center;
+}
+
+.booking:hover {
+    border: none;
+}
+
+.booking>li {
+    margin: 0.8rem;
+    line-height: 25px;
+}
+
+.neon-border {
+    position: relative;
+    left: 60px;
+    width: 200px;
+    height: 230px;
+    display: inline-block;
+    padding: 4px;
+    border-radius: 10%;
+    transition: box-shadow 0.3s;
+    border: 3px solid var(--tertiary-color);
+}
+
+.neon-border img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+}
+
+.neon-border:hover {
+    box-shadow: 0 0 5px #c09739, 0 0 5px #c09739, 0 0 10px #c09739, 0 0 30px #c09739;
+}
+
+.neon-border:not(:hover) {
+    animation-play-state: none;
+}
+
+/*CONTACTO*/
+
+h5 {
+    color: var(--quaternary-color);
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: var(--quaternary-font-size);
+    color: var(--quaternary-color);
+}
+
+h7 {
+    font-size: var(--six-font-size);
+}
+
+.contact-section {
+    height: 520px;
+    background-color: #59a3c2;
+    gap: 1.2rem;
+}
+
+.contact-section div {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contact-container {
+    position: relative;
+    top: 40px;
+}
+
+.contact-container ul li {
+    padding: 8px;
+}
+
+.links-container {
+    position: relative;
+    top: 80px;
+}
+
+.links-container ul li {
+    justify-content: center;
+    padding: 5px;
+}
+
+.links-container ul li a {
+    color: var(--quaternary-color);
+}
+
+.logofin {
+    position: relative;
+    top: 120px;
+}
+
+.socials {
+    display: inline-block;
+    position: relative;
+    top: 160px;
+}
+
+.app {
+    transition: box-shadow 0.3s;
+    border-radius: 15%;
+}
+
+.app:hover {
+    box-shadow: 0 0 5px #fff, 0 0 5px #fff, 0 0 10px #fff, 0 0 30px #fff;
+}
+
+.app:not(:hover) {
+    animation-play-state: none;
+}
+
+.cta {
+    width: 50px;
+}
+
+footer {
+    background-color: #d0ac59;
+    display: flex;
+    justify-content: center;
+    padding: 0.8rem;
+}
